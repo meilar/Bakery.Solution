@@ -9,7 +9,7 @@ namespace Bakery.Tests
   public class OrderTests : IDisposable
   {
       private int _testAmount = 10;
-      private string _testDescription = "Walk the dog.";
+      private string _testDescription = "Breads. Lotsa Bread.";
 
       private string _testDue = "tomorrow";
       private string _testNotes = "this is a test order";
