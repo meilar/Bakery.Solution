@@ -51,21 +51,23 @@ namespace Bakery.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
-  //   [TestMethod]
-  //   public void GetAll_ReturnsOrders_OrderList()
-  //   {
-  //     //Arrange
-  //     string description01 = "Walk the dog";
-  //     string description02 = "Wash the dishes";
-  //     Order newItem1 = new Order(description01);
-  //     Order newItem2 = new Order(description02);
-  //     List<Order> newList = new List<Order> { newItem1, newItem2 };
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      Order newOrder = new Order(_testAmount, _testDescription, _testDue, _testNotes);
+      Order newerOrder = new Order(_testAmount, _testDescription, _testDue, _testNotes);
+      List<Order> newList = new List<Order> { newOrder, newerOrder };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
 
-  //     //Act
-  //     List<Order> result = Order.GetAll();
-
-  //     //Assert
-  //     CollectionAssert.AreEqual(newList, result);
-  //   }
+    [TestMethod]
+    public void Find_ReturnsOrder_Order()
+    {
+      Order newOrder = new Order(_testAmount, _testDescription, _testDue, _testNotes);
+      int searchId = newOrder.Id;
+      Order result = Order.Find(searchId);
+      CollectionAssert.Equals(result, newOrder);
+    }
   }
 }
