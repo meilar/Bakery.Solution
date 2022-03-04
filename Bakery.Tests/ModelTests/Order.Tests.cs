@@ -8,6 +8,11 @@ namespace Bakery.Tests
   [TestClass]
   public class OrderTests : IDisposable
   {
+      private int _testAmount = 10;
+      private string _testDescription = "Walk the dog.";
+
+      private string _testDue = "tomorrow";
+      private string _testNotes = "this is a test order";
 
     public void Dispose()
     {
@@ -17,23 +22,19 @@ namespace Bakery.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newItem = new Order(12, "two bread", "2022-06-20", "for customer's birthday");
+      Order newItem = new Order(_testAmount, _testDescription, _testDue, _testNotes);
       Assert.AreEqual(typeof(Order), newItem.GetType());
     }
 
-  //   [TestMethod]
-  //   public void GetDescription_ReturnsDescription_String()
-  //   {
-  //     //Arrange
-  //     string description = "Walk the dog.";
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      Order newItem = new Order(_testAmount, _testDescription, _testDue, _testNotes);
+      string result = newItem.Description;
 
-  //     //Act
-  //     Order newItem = new Order(description);
-  //     string result = newItem.Description;
-
-  //     //Assert
-  //     Assert.AreEqual(description, result);
-  //   }
+      //Assert
+      Assert.AreEqual(_testDescription, result);
+    }
 
   //   [TestMethod]
   //   public void SetDescription_SetDescription_String()
