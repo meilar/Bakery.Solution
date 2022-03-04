@@ -20,5 +20,17 @@ div#title-bar {
 }
 
 #vendor-jumbo {
-  background-image: "~/img/andy-li-RndRFJ1v1kk-unsplash.jpg";
+  background-color: rgba(250, 240, 230, 0.932);
+  background-image: url("../img/mohamed-hassouna-N4gtuEZ5gWc-unsplash.jpg");
+  background-size: cover;
+  color: black;
 }
+
+#vendor-jumbo h1 {
+  padding-left: 17%;
+  color: white;
+  text-shadow: 4px 4px 6px gray;
+}
+
+
+
