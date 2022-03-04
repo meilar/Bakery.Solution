@@ -73,6 +73,14 @@ namespace Bakery.Tests
       List<Order> result = testVendor.Orders;
       CollectionAssert.AreEqual(testList, result);
     }
+
+    public void AddOrder_UpdatesBalance_VendorBalance()
+    {
+      Order testOrder = new Order(12, "test description", "test date","test notes");
+      Vendor testVendor = new Vendor (_testName, _testAddress, _testNotes);
+      testVendor.AddOrder(testOrder);
+      Assert.AreEqual(testOrder.Amount, testVendor.Balance);
+    }
     
   }
 }

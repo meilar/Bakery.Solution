@@ -9,7 +9,7 @@ namespace Bakery.Models
     public string Name { get; set; }
     public string Address { get; set; }
     public string Notes { get; set; }
-    public int Balance { get; }
+    public int Balance { get; set; }
 
     public List<Order> Orders { get; set; }
 
@@ -29,6 +29,12 @@ namespace Bakery.Models
       _instances.Clear();
     }
 
+    public void UpdateBalance(int orderAmount)
+    {
+      this.Balance = this.Balance + orderAmount;
+
+    }
+
     public static List<Vendor> GetAll()
     {
       return _instances;
@@ -42,6 +48,7 @@ namespace Bakery.Models
     public void AddOrder(Order order)
     {
       Orders.Add(order);
+      this.UpdateBalance(order.Amount);
     }
 
   }
