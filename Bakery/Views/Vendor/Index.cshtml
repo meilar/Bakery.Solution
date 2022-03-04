@@ -16,10 +16,12 @@
           <a href="/Vendors/new" class="btn btn-primary">Add a new Vendor</a>
         </div>
       }
+  <div class="card-columns mx-auto d-flex justify-content-center col-8">
   @foreach (Vendor vendor in Model)
   { 
-    <div id="vendor-card-@vendor.Id" class="card" style="width: 18rem;">
-      <div class="card-body">
+
+    <div id='vendor-card-@vendor.Id' class="card mx-auto">
+      <div class="card-body vendor-card">
         <h5 class="card-title">@vendor.Name ID#@vendor.Id</h5>
         <h6 class="card-subtitle mb-2 text-muted">@vendor.Address</h6>
         <p class="card-text">@vendor.Notes</p>
@@ -33,9 +35,10 @@
         }
         <a href="#" class="card-link">Orders</a>
         <a href="#" class="card-link">Add new order</a>
-        <a href="#" class="card-link">Delete Vendor</a>
+        <a href="#" class="card-link text-danger">Delete Vendor</a>
       </div>
     </div>
   }
+  </div>
   @await Html.PartialAsync("_Footer")
 </div>

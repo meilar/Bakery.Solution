@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout";
+}
+  <div class="container">
+  @await Html.PartialAsync("_Navbar")
+  <div id="vendor-jumbo" class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Add a Vendor</h1>      
+    </div>
+  </div>
+  <div class="container">
+    <form action="/Vendors" method="post">
+      <div class="form-group">
+        <label for="vendor-name">Enter Vendor name</label>
+        <input type="text" class="form-control" name="vendorName" id="vendorName" aria-describedby="textHelp" placeholder="Business Name">
+      </div>
+      <div class="form-group">
+        <label for="vendorAddress">Enter Vendor address</label>
+        <input type="text" class="form-control" name="vendorAddress" id="vendorAddress" placeholder="Portland, Oregon">
+      </div>
+      <div class="form-group">
+        <label for="vendorNotes">(Optional) Enter customer notes for this Vendor.</label>
+        <textarea class="form-control" id="vendorNotes" name="vendorNotes" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Create Vendor</button>
+      <a href="/Vendors" class="btn btn-danger">Cancel</a>
+    </form>
+  </div>
+  @await Html.PartialAsync("_Footer")
+  </div>

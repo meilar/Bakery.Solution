@@ -32,5 +32,8 @@ div#title-bar {
   text-shadow: 4px 4px 6px gray;
 }
 
+.card {
+  min-width: 18rem;
+}
 
 
