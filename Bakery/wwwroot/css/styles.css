@@ -18,3 +18,7 @@ div#title-bar {
   height: 30%;
   width: auto;
 }
+
+#vendor-jumbo {
+  background-image: "~/img/andy-li-RndRFJ1v1kk-unsplash.jpg";
+}
