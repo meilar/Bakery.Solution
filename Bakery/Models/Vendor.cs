@@ -39,10 +39,10 @@ namespace Bakery.Models
       return _instances[searchId-1];
     }
 
-    // public void AddItem(Item item)
-    // {
-    //   Items.Add(item);
-    // }
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
+    }
 
   }
 }

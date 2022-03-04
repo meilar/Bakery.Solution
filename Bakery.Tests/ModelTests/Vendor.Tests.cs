@@ -63,23 +63,16 @@ namespace Bakery.Tests
       CollectionAssert.Equals(result, testVendor);
     }
 
-    // [TestMethod]
-    // public void AddItem_AssociatesItemWithCategory_ItemList()
-    // {
-    //   //Arrange
-    //   string description = "Walk the dog.";
-    //   Item newItem = new Item(description);
-    //   List<Item> newList = new List<Item> { newItem };
-    //   string name = "Work";
-    //   Vendor newCategory = new Vendor(name);
-    //   newCategory.AddItem(newItem);
-
-    //   //Act
-    //   List<Item> result = newCategory.Items;
-
-    //   //Assert
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_VendorList()
+    {
+      Order testOrder = new Order(12, "test description", "test date","test notes");
+      List<Order> testList = new List<Order> { testOrder };
+      Vendor testVendor = new Vendor (_testName, _testAddress, _testNotes);
+      testVendor.AddOrder(testOrder);
+      List<Order> result = testVendor.Orders;
+      CollectionAssert.AreEqual(testList, result);
+    }
     
   }
 }
