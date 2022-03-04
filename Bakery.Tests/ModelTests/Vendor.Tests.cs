@@ -36,19 +36,13 @@ namespace Bakery.Tests
       Assert.AreEqual(result, updatedName);
     }
 
-    // [TestMethod]
-    // public void GetId_ReturnsCategoryId_Int()
-    // {
-    //   //Arrange
-    //   string name = "Test Vendor";
-    //   Vendor newCategory = new Vendor(name);
-
-    //   //Act
-    //   int result = newCategory.Id;
-
-    //   //Assert
-    //   Assert.AreEqual(1, result);
-    // }
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      Vendor testVendor = new Vendor(_testName, _testAddress, _testNotes);
+      int result = testVendor.Id;
+      Assert.AreEqual(1, result);
+    }
 
     // [TestMethod]
     // public void GetAll_ReturnsAllCategoryObjects_CategoryList()
