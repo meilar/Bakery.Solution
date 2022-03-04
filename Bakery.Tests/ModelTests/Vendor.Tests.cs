@@ -54,21 +54,14 @@ namespace Bakery.Tests
       CollectionAssert.AreEqual(testList, result);
     }
 
-    // [TestMethod]
-    // public void Find_ReturnsCorrectCategory_Category()
-    // {
-    //   //Arrange
-    //   string name01 = "Work";
-    //   string name02 = "School";
-    //   Vendor newCategory1 = new Vendor(name01);
-    //   Vendor newCategory2 = new Vendor(name02);
-
-    //   //Act
-    //   Vendor result = Vendor.Find(2);
-
-    //   //Assert
-    //   Assert.AreEqual(newCategory2, result);
-    // }
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      Vendor testVendor = new Vendor (_testName, _testAddress, _testNotes);
+      int searchId = testVendor.Id;
+      Vendor result = Vendor.Find(searchId);
+      CollectionAssert.Equals(result, testVendor);
+    }
 
     // [TestMethod]
     // public void AddItem_AssociatesItemWithCategory_ItemList()
