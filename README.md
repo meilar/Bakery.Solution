@@ -1,9 +1,10 @@
-<h1 align="center">{CHANGE ME}</h1>
+<h1 align="center">Pierre's Dashboard</h1>
 
 Matthew Eilar | [LinkedIn](https://www.linkedin.com/in/eilar-503/) | [email](mailto:<meilar@gmail.com>) | [website](https://www.mattheweilar.com)
 
+![Screenshot of webapp]()
 ## About this project
-{SCREENSHOT}
+
 
 ## Get Started
 
@@ -22,7 +23,7 @@ This site incorporates the following frameworks and languages:
 
 ## Acknowledgements
 
-Thank you to my partner, Alex, for support in all ways. Thank you to my parents for encouraging technology exploration, even when resources were scarce. Thank you to the Kohlenberg Foundation for {CHANGE ME}.
+Thank you to my partner, Alex, for support in all ways. Thank you to my parents for encouraging technology exploration, even when resources were scarce. Thank you to the Kohlenberg Foundation for arranging the trip to Newport.
 
 ## License 
 

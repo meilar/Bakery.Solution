@@ -27,6 +27,7 @@ namespace ToDoList
     {
       app.UseDeveloperExceptionPage();
       app.UseRouting();
+      app.UseCors();
 
       app.UseEndpoints(routes =>
       {
