@@ -44,22 +44,15 @@ namespace Bakery.Tests
       Assert.AreEqual(1, result);
     }
 
-    // [TestMethod]
-    // public void GetAll_ReturnsAllCategoryObjects_CategoryList()
-    // {
-    //   //Arrange
-    //   string name01 = "Work";
-    //   string name02 = "School";
-    //   Vendor newCategory1 = new Vendor(name01);
-    //   Vendor newCategory2 = new Vendor(name02);
-    //   List<Vendor> newList = new List<Vendor> { newCategory1, newCategory2 };
-
-    //   //Act
-    //   List<Vendor> result = Vendor.GetAll();
-
-    //   //Assert
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
+    [TestMethod]
+    public void GetAll_ReturnsAllVendors_VendorList()
+    {
+      Vendor testVendor = new Vendor(_testName, _testAddress, _testNotes);
+      Vendor testVendor2 = new Vendor(_testName, _testAddress, _testNotes);
+      List<Vendor> testList = new List<Vendor> { testVendor, testVendor2 };
+      List<Vendor> result = Vendor.GetAll();
+      CollectionAssert.AreEqual(testList, result);
+    }
 
     // [TestMethod]
     // public void Find_ReturnsCorrectCategory_Category()
