@@ -22,35 +22,26 @@ namespace Bakery.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newItem = new Order(_testAmount, _testDescription, _testDue, _testNotes);
-      Assert.AreEqual(typeof(Order), newItem.GetType());
+      Order newOrder = new Order(_testAmount, _testDescription, _testDue, _testNotes);
+      Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
-      Order newItem = new Order(_testAmount, _testDescription, _testDue, _testNotes);
-      string result = newItem.Description;
-
-      //Assert
+      Order newOrder = new Order(_testAmount, _testDescription, _testDue, _testNotes);
+      string result = newOrder.Description;
       Assert.AreEqual(_testDescription, result);
     }
 
-  //   [TestMethod]
-  //   public void SetDescription_SetDescription_String()
-  //   {
-  //     //Arrange
-  //     string description = "Walk the dog.";
-  //     Order newItem = new Order(description);
-
-  //     //Act
-  //     string updatedDescription = "Do the dishes";
-  //     newItem.Description = updatedDescription;
-  //     string result = newItem.Description;
-
-  //     //Assert
-  //     Assert.AreEqual(updatedDescription, result);
-  //   }
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      Order newOrder = new Order(_testAmount, _testDescription, _testDue, _testNotes);
+      int newAmount = 5;
+      newOrder.Amount = newAmount;
+      Assert.AreNotEqual(_testAmount, newOrder.Amount);
+    }
 
   //   [TestMethod]
   //   public void GetAll_ReturnsEmptyList_ItemList()
