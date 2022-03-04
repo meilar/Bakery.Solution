@@ -22,23 +22,19 @@ namespace Bakery.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor(_testName, _testAddress, _testNotes);
-      Assert.AreEqual(typeof(Vendor), newVendor.GetType());
+      Vendor testVendor = new Vendor(_testName, _testAddress, _testNotes);
+      Assert.AreEqual(typeof(Vendor), testVendor.GetType());
     }
 
-    // [TestMethod]
-    // public void GetName_ReturnsName_String()
-    // {
-    //   //Arrange
-    //   string name = "Test Vendor";
-    //   Vendor newCategory = new Vendor(name);
-
-    //   //Act
-    //   string result = newCategory.Name;
-
-    //   //Assert
-    //   Assert.AreEqual(name, result);
-    // }
+    [TestMethod]
+    public void GetName_ReturnsName_String()
+    {
+      Vendor testVendor = new Vendor(_testName, _testAddress, _testNotes);
+      string updatedName = "Updated name";
+      testVendor.Name = updatedName;
+      string result = testVendor.Name;
+      Assert.AreEqual(result, updatedName);
+    }
 
     // [TestMethod]
     // public void GetId_ReturnsCategoryId_Int()
