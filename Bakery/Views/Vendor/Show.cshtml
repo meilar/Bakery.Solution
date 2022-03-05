@@ -1,0 +1,31 @@
+@{
+  Layout = "_Layout";
+}
+@using Bakery.Models;
+  <div class="container">
+  @await Html.PartialAsync("_Navbar")
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Order #</th>
+        <th scope="col">Description</th>
+        <th scope="col">Notes</th>
+        <th scope="col">Payment Due</th>
+        <th scope="col">Order Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (Order element in @model.Orders)
+      {
+      <tr>
+        <th scope="row">@element.Id</th>
+        <td>@element.Description</td>
+        <td>@element.Notes</td>
+        <td>@element.Due</td>
+        <td>$@element.Amount.00
+      </tr>
+      }
+    </tbody>
+  </table>
+  @await Html.PartialAsync("_Footer")
+  </div>
