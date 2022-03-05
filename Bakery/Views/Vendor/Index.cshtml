@@ -29,12 +29,12 @@
         {
           <p class="text-primary">This vendor has no outstanding balances.</p>
         }
-        else
+        @else
         {
           <p class="text-danger">Outstanding balance: $@vendor.Balance.00</p>
         }
         <a href="/Vendors/@vendor.Id" class="card-link">Orders</a>
-        <a href="#" class="card-link">Add new order</a>
+        <a href="/Vendors/@vendor.Id/Orders/new" class="card-link">Add new order</a>
         <a href="#" class="card-link text-danger">Delete Vendor</a>
       </div>
     </div>

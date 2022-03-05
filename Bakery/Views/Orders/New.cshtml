@@ -1,0 +1,35 @@
+@{
+  Layout = "_Layout";
+}
+@using Bakery.Models;
+  <div class="container">
+  @await Html.PartialAsync("_Navbar")
+  <div id="vendor-jumbo" class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">@Model.Name: Add an order</h1>      
+    </div>
+  </div>
+  <div class="container">
+    <form action="/Vendors/@Model.Id/Orders" method="post">
+      <div class="form-group">
+        <label for="orderDescription">Enter order description</label>
+        <textarea class="form-control" id="orderDescription" name="orderDescription rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="orderNotes">(Optional) Enter order notes.</label>
+        <textarea class="form-control" id="orderNotes" name="orderNotes" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="orderDue">Enter payment due date</label>
+        <input type="text" class="form-control" name="orderDue" id="orderDue" placeholder="Portland, Oregon">
+      </div>
+      <div class="form-group">
+        <label for="orderAmount">Enter order amount</label>
+        <input type="number" class="form-control" name="orderAmount" id="orderAmount" aria-describedby="textHelp" placeholder="Business Name">
+      </div>
+      <button type="submit" class="btn btn-primary">Add order</button>
+      <a href="/Vendors/@Model.Id" class="btn btn-danger">Cancel</a>
+    </form>
+  </div>
+  @await Html.PartialAsync("_Footer")
+  </div>

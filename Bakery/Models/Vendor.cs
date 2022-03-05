@@ -48,7 +48,8 @@ namespace Bakery.Models
     public void AddOrder(Order order)
     {
       Orders.Add(order);
-      this.UpdateBalance(order.Amount);
+      int updateAmt = order.Amount;
+      this.UpdateBalance(updateAmt);
     }
 
   }
