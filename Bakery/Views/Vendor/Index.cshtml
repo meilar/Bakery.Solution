@@ -22,20 +22,19 @@
 
     <div id='vendor-card-@vendor.Id' class="card mx-auto">
       <div class="card-body vendor-card">
-        <h5 class="card-title">@vendor.Name ID#@vendor.Id</h5>
+        <h5 class="card-title">@vendor.Name | Vendor ID#@vendor.Id</h5>
         <h6 class="card-subtitle mb-2 text-muted">@vendor.Address</h6>
         <p class="card-text">@vendor.Notes</p>
         @if (vendor.Balance == 0)
         {
           <p class="text-primary">This vendor has no outstanding balances.</p>
         }
-        @else
+        else
         {
           <p class="text-danger">Outstanding balance: $@vendor.Balance.00</p>
         }
         <a href="/Vendors/@vendor.Id" class="card-link">Orders</a>
         <a href="/Vendors/@vendor.Id/Orders/new" class="card-link">Add new order</a>
-        <a href="#" class="card-link text-danger">Delete Vendor</a>
       </div>
     </div>
   }

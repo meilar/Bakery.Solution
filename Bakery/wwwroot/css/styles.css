@@ -36,4 +36,6 @@ div#title-bar {
   min-width: 18rem;
 }
 
-
+#add-form {
+  margin-top: 5%;
+}

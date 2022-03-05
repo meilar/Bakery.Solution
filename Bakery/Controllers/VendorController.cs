@@ -39,7 +39,9 @@ namespace Bakery.Controllers
     [HttpPost("/Vendors/{vendorId}/Orders")]
     public ActionResult Create(int vendorId, int orderAmount, string orderDescription, string orderDue, string orderNotes)
     {
+      Vendor thisVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(orderAmount, orderDescription, orderDue, orderNotes);
+      thisVendor.AddOrder(newOrder);
       return RedirectToAction("Show", new {id= vendorId});
     }
 
